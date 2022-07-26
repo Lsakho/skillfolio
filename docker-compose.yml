@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  db:
+    build: .
+    restart: always
+    ports:
+
+      - 33056:3306
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=itMustBeAVeryStrongPassword
+      - MYSQL_DATABASE=skill_Folio
+      - MYSQL_USER=realise
+      - MYSQL_PASSWORD=realise1234
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8859:80
+
+    environment:
+      - PMA_ARBITRARY=1
+
