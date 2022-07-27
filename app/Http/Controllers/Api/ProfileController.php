@@ -68,17 +68,6 @@ class ProfileController extends Controller
 
         return new ProfileCollection($profiles);
         
-        // $profile = Profile::find(1);
-        // foreach ($profile->skill as $skill) {
-        //     echo $skill->pivot->level;
-   
-
-        
-
-//         $profile = Profile::find(1);
-// foreach ($profile->skill as $skill) {
-//     echo $skill->pivot->level;
-// }
 
  }
     /**

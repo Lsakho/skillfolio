@@ -92,7 +92,7 @@ Route::get('jobskills', [JobController::class, 'skilljob']);
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
      
-Route::middleware('auth:api')->group( function () {
+Route::middleware(['json.response', 'auth:api'])->group( function () {
     Route::resource('profiles', ProfileController::class);
 });
 

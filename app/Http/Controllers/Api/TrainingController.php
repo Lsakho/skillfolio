@@ -64,7 +64,7 @@ class TrainingController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-         /**
+    /**
      * @OA\Post(
      *      path="/trainings",
      *      operationId="store",
@@ -77,9 +77,8 @@ class TrainingController extends Controller
      *          required=true,
      *           @OA\Schema(type="string")
      *      ),
-     * @OA\Parameter(
-     *          name= "type",
-     *          
+     *      @OA\Parameter(
+     *          name= "type",         
      *          in="query",
      *          required=true,
      *           @OA\Schema(type="string",
@@ -103,7 +102,7 @@ class TrainingController extends Controller
      *          response=403,
      *          description="Forbidden"
      *      )
-     * )
+     *     )
      */
     public function store(Request $request)
     {

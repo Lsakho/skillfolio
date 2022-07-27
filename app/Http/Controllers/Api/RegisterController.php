@@ -16,6 +16,57 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     /**
+     * @OA\Post(
+     *      path="/register",
+     *      operationId="register",
+     *      tags={"Register"},
+     *      summary="register new user",
+     *      description="Returns project data",
+     *      @OA\Parameter(
+     *          name="login",
+     *          in="query",
+     *          required=true,
+     *           @OA\Schema(type="string")
+     *      ),
+     *      @OA\Parameter(
+     *          name="email",
+     *          in="query",
+     *          required=true,
+     *           @OA\Schema(type="string")
+     *      ),
+     *      @OA\Parameter(
+     *          name="password",
+     *          in="query",
+     *          required=true,
+     *           @OA\Schema(type="string")
+     *      ),
+     *      @OA\Parameter(
+     *          name="c_password",
+     *          in="query",
+     *          required=true,
+     *           @OA\Schema(type="string")
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation",
+     *           @OA\PathItem
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
+     */
     public function register(Request $request)
     {
         $this->validate($request, [
@@ -47,6 +98,47 @@ class RegisterController extends Controller
     /**
      * Login Req
      */
+    
+     /**
+     * @OA\Post(
+     *      path="/login",
+     *      operationId="login",
+     *      tags={"Login"},
+     *      summary="login user",
+     *      description="Returns project data",
+     *      @OA\Parameter(
+     *          name="email",
+     *          in="query",
+     *          required=true,
+     *           @OA\Schema(type="string")
+     *      ),
+     *      @OA\Parameter(
+     *          name="password",
+     *          in="query",
+     *          required=true,
+     *           @OA\Schema(type="string")
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation",
+     *           @OA\PathItem
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
+     */
+
+    
     public function login(Request $request)
     {
         $data = [
