@@ -89,13 +89,14 @@ Route::get('jobskills', [JobController::class, 'skilljob']);
 
 //route for passport
 
-Route::post('register', [RegisterController::class, 'register']);
-Route::post('login', [RegisterController::class, 'login']);
+
      
 Route::middleware(['json.response', 'auth:api'])->group( function () {
     Route::resource('profiles', ProfileController::class);
 });
 
+Route::post('register', [RegisterController::class, 'register']);
+Route::post('login', [RegisterController::class, 'login']);
 // route for spatie role and permissions
 
   
